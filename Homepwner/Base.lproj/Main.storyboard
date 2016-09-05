@@ -89,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BrY-kG-isN">
-                                <rect key="frame" x="28" y="72" width="544" height="520"/>
+                                <rect key="frame" x="28" y="72" width="544" height="391"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wc3-vl-MtJ">
                                         <rect key="frame" x="0.0" y="0.0" width="544" height="30"/>
@@ -149,14 +149,17 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzD-Sg-9Rg">
-                                        <rect key="frame" x="0.0" y="114" width="544" height="368"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" misplaced="YES" text="Date Created" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzD-Sg-9Rg">
+                                        <rect key="frame" x="0.0" y="114" width="544" height="181"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYR-Xt-kGD">
+                                        <rect key="frame" x="0.0" y="303" width="544" height="50"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2K-Sv-gwW">
-                                        <rect key="frame" x="0.0" y="490" width="544" height="30"/>
+                                        <rect key="frame" x="0.0" y="361" width="544" height="30"/>
                                         <state key="normal" title="Change Date"/>
                                         <connections>
                                             <segue destination="dAS-j4-ToV" kind="show" identifier="ChangeDate" id="9wr-sC-F2i"/>
@@ -165,14 +168,30 @@
                                 </subviews>
                                 <gestureRecognizers/>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Egu-R5-LC1">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="TJl-dQ-P9F"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="hM6-Qo-cJ3">
+                                        <connections>
+                                            <action selector="takePicture:" destination="oj0-pP-PNl" id="jc1-7g-lS5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="Egu-R5-LC1" firstAttribute="leading" secondItem="8Zz-ea-J0x" secondAttribute="leadingMargin" constant="-20" id="6Oo-QH-IFP"/>
+                            <constraint firstItem="bjx-5T-4wu" firstAttribute="top" secondItem="Egu-R5-LC1" secondAttribute="bottom" id="7cB-VU-GmA"/>
                             <constraint firstItem="BrY-kG-isN" firstAttribute="top" secondItem="ByR-hu-C00" secondAttribute="bottom" constant="8" id="BVy-ZJ-HFP"/>
                             <constraint firstItem="BrY-kG-isN" firstAttribute="leading" secondItem="8Zz-ea-J0x" secondAttribute="leadingMargin" constant="8" id="E3M-fy-iWM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BrY-kG-isN" secondAttribute="trailing" constant="8" id="LMz-QU-lmG"/>
-                            <constraint firstItem="bjx-5T-4wu" firstAttribute="top" secondItem="BrY-kG-isN" secondAttribute="bottom" constant="8" id="TU4-Xx-kml"/>
+                            <constraint firstItem="Egu-R5-LC1" firstAttribute="top" secondItem="BrY-kG-isN" secondAttribute="bottom" constant="93" id="ivH-T2-IhV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Egu-R5-LC1" secondAttribute="trailing" constant="-20" id="nNn-lx-ItY"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="Rj3-Mx-UWE" appends="YES" id="DkL-zg-CQR"/>
@@ -180,6 +199,7 @@
                     </view>
                     <connections>
                         <outlet property="dateCreatedLabel" destination="MzD-Sg-9Rg" id="cA7-5t-iVR"/>
+                        <outlet property="imageView" destination="bYR-Xt-kGD" id="BNX-0P-UXf"/>
                         <outlet property="nameTextField" destination="32f-2b-nmA" id="DkN-ow-8dQ"/>
                         <outlet property="serialNumTextField" destination="rIG-f6-sjg" id="pJQ-tD-Xwm"/>
                         <outlet property="valueTextField" destination="djQ-hy-ZRC" id="YPg-Gm-E36"/>

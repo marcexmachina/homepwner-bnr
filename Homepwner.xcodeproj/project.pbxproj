@@ -11,6 +11,7 @@
 		983316751D798FFD002405F8 /* ChangeDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983316741D798FFD002405F8 /* ChangeDateViewController.swift */; };
 		984668D71D76B6FE00659A29 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984668D61D76B6FE00659A29 /* DetailViewController.swift */; };
 		98671D581D769AC60065E211 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98671D571D769AC60065E211 /* ItemCell.swift */; };
+		987539621D7DEF8500F2F5FD /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987539611D7DEF8500F2F5FD /* ImageStore.swift */; };
 		988691151D59F2C800BEBEE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988691141D59F2C800BEBEE8 /* AppDelegate.swift */; };
 		9886911A1D59F2C800BEBEE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 988691181D59F2C800BEBEE8 /* Main.storyboard */; };
 		9886911C1D59F2C800BEBEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9886911B1D59F2C800BEBEE8 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		983316741D798FFD002405F8 /* ChangeDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeDateViewController.swift; sourceTree = "<group>"; };
 		984668D61D76B6FE00659A29 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		98671D571D769AC60065E211 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		987539611D7DEF8500F2F5FD /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		988691111D59F2C800BEBEE8 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		988691141D59F2C800BEBEE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		988691191D59F2C800BEBEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				984668D61D76B6FE00659A29 /* DetailViewController.swift */,
 				983316721D798B07002405F8 /* DetailsTextField.swift */,
 				983316741D798FFD002405F8 /* ChangeDateViewController.swift */,
+				987539611D7DEF8500F2F5FD /* ImageStore.swift */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				9886912B1D59F8A300BEBEE8 /* ItemStore.swift in Sources */,
 				984668D71D76B6FE00659A29 /* DetailViewController.swift in Sources */,
 				983316751D798FFD002405F8 /* ChangeDateViewController.swift in Sources */,
+				987539621D7DEF8500F2F5FD /* ImageStore.swift in Sources */,
 				983316731D798B07002405F8 /* DetailsTextField.swift in Sources */,
 				988691151D59F2C800BEBEE8 /* AppDelegate.swift in Sources */,
 				98671D581D769AC60065E211 /* ItemCell.swift in Sources */,
