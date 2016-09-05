@@ -225,7 +225,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pMO-5T-5lM"/>
                     <connections>
-                        <outlet property="datePicker" destination="FU5-IU-c9S" id="AX0-7L-lau"/>
+                        <outlet property="datePicker" destination="FU5-IU-c9S" id="6vF-wp-rsW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wh1-B2-BWd" userLabel="First Responder" sceneMemberID="firstResponder"/>

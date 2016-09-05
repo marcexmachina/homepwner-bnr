@@ -10,10 +10,19 @@ import UIKit
 
 class ChangeDateViewController: UIViewController {
     
+    
     var item: Item!
+    
+    @IBOutlet var datePicker: UIDatePicker!
         
     @IBAction func newDateSelected(sender: AnyObject) {
-        let datePicker = sender as! UIDatePicker
-        item.dateCreated = datePicker.date
+        let dateController = sender as! UIDatePicker
+        self.item.dateCreated = dateController.date
+    }
+    
+    //Set the datepickers date to be the items dateCreated
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.datePicker.setDate(self.item.dateCreated, animated: false)
     }
 }
