@@ -12,6 +12,7 @@ class ItemsViewController: UITableViewController {
     
     var itemStore: ItemStore!
     let uiTableViewCell = "UITableViewCell"
+    var imageStore: ImageStore!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -79,7 +80,7 @@ class ItemsViewController: UITableViewController {
                     if(indexPath.row != self.itemStore.items.count) {
                         //remove item from itemstore
                         self.itemStore.removeItem(item)
-                
+                        self.imageStore.deleteImageForKey(item.itemKey)
                         //remove item from tableview with animation
                         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
                     }
@@ -129,6 +130,7 @@ class ItemsViewController: UITableViewController {
                 let item = itemStore.items[row]
                 let detailController = segue.destinationViewController as! DetailViewController
                 detailController.item = item
+                detailController.imageStore = self.imageStore
             }
         }
     }

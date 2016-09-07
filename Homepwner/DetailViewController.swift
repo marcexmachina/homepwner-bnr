@@ -16,6 +16,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
     @IBOutlet var dateCreatedLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
+    //Item selected in tableview
+    var item: Item! {
+        didSet {
+            self.navigationItem.title = item.name
+            
+        }
+    }
+    
+    var imageStore: ImageStore!
+    
     @IBAction func takePicture(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         //Check if device has a camera and take picture if so,
@@ -31,14 +41,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
     
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
         view.endEditing(true)
-    }
-    
-    //Item selected in tableview
-    var item: Item! {
-        didSet {
-            self.navigationItem.title = item.name
-
-        }
     }
     
     let numberFormatter: NSNumberFormatter = {
@@ -63,6 +65,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
         serialNumTextField.text = item.serialNumber
         valueTextField.text = numberFormatter.stringFromNumber(item.valueInDollars)
         dateCreatedLabel.text = dateFormatter.stringFromDate(item.dateCreated)
+        
+        let itemKey = self.item.itemKey
+        let displayImage = self.imageStore.imageForKey(itemKey)
+        self.imageView.image = displayImage
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -96,6 +102,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.imageStore.setImage(image, forKey: item.itemKey)
         imageView.image = image
         dismissViewControllerAnimated(true, completion: nil)
     }
