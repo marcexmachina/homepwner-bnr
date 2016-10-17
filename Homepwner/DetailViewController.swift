@@ -16,6 +16,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
     @IBOutlet var dateCreatedLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
     
+    var imageStore: ImageStore!
+    
     //Item selected in tableview
     var item: Item! {
         didSet {
@@ -24,10 +26,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
         }
     }
     
-    var imageStore: ImageStore!
-    
+    // MARK: Actions
     @IBAction func takePicture(sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
+        
         //Check if device has a camera and take picture if so,
         //otherwise select picture from gallery
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
@@ -36,13 +38,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
             imagePicker.sourceType = .PhotoLibrary
         }
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func removePicture(sender: AnyObject) {
+        let itemKey = self.item.itemKey
+        self.imageStore.deleteImageForKey(itemKey)
     }
     
     @IBAction func backgroundTapped(sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     
+    // MARK: Formatters
     let numberFormatter: NSNumberFormatter = {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .DecimalStyle
@@ -76,7 +85,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate , UINavigation
         
         item.name = nameTextField.text ?? ""
         item.serialNumber = serialNumTextField.text
-        
         
         if let valueText = valueTextField.text,
             value = numberFormatter.numberFromString(valueText) {

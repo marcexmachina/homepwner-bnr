@@ -24,5 +24,6 @@ class ChangeDateViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.datePicker.setDate(self.item.dateCreated, animated: false)
+        self.datePicker.datePickerMode = UIDatePickerMode.Date
     }
 }
