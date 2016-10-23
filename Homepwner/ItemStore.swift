@@ -57,17 +57,6 @@ class ItemStore {
         return NSKeyedArchiver.archiveRootObject(items, toFile: itemArchiveURL.path!)
     }
     
-    //function to create URL for an image, by appending image key to document directory URL
-    func imageUrlForKey(key: String) -> NSURL{
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let documentDirectory  = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent(key)
-    }
-    
-    
-    
-    
-    
     
     
     
